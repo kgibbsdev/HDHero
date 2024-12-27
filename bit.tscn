@@ -30,4 +30,4 @@ shape = SubResource("RectangleShape2D_re11y")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_om4rt")
-frame_progress = 0.948102
+frame_progress = 0.0810177

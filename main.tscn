@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bee6tdc7hskmy" path="res://ground.tscn" id="1_wmbpd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o845l"]
-font_size = 69
+font_size = 100
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6bls")
@@ -16,10 +16,11 @@ script = ExtResource("1_h6bls")
 script = ExtResource("1_b5j75")
 
 [node name="ScoreLabel" type="Label" parent="ScoreManager"]
-offset_left = 331.0
-offset_top = 152.0
-offset_right = 538.0
-offset_bottom = 219.0
+z_index = -1000
+offset_left = 14.0
+offset_top = -9.0
+offset_right = 298.0
+offset_bottom = 128.0
 text = "0"
 label_settings = SubResource("LabelSettings_o845l")
 
