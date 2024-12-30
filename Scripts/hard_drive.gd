@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bit_scene: PackedScene = load("res://bit.tscn")
+@onready var bit_scene: PackedScene = load("res://Scenes/bit.tscn")
 @export var number_of_bits = 0
 @export var bit_limit = 100
 # Called when the node enters the scene tree for the first time.
