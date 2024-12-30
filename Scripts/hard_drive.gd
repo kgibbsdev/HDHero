@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		print("input")
-		spawn_bit()
+		for x in Global.power:
+			spawn_bit()
 
 func _apply_impulse_to_body(body: RigidBody2D) -> void:
 	# Apply the impulse after the body is integrated into the physics system

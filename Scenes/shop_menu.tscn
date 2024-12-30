@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgqtliuuslnyk"]
+
+[ext_resource type="Script" path="res://Scripts/shop_menu.gd" id="1_m2ly5"]
+
+[node name="ShopMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2ly5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IncreaseBitLimitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Increase Bit Limit"
+
+[node name="HireWorkerButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hire Worker"
+
+[node name="IncreasePowerButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Increase Power"
+
+[connection signal="pressed" from="VBoxContainer/IncreaseBitLimitButton" to="." method="_on_increase_bit_limit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/IncreasePowerButton" to="." method="_on_increase_power_button_pressed"]
