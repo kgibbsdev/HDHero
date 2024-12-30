@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://rxp2msfs42f"]
+
+[ext_resource type="Script" path="res://worker.gd" id="1_sqc3n"]
+[ext_resource type="Texture2D" uid="uid://dx8a2nhiqj2d6" path="res://player.png" id="2_7606q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_go1x8"]
+radius = 17.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3wli2"]
+radius = 23.0217
+
+[node name="Worker" type="CharacterBody2D"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_sqc3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7606q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_go1x8")
+
+[node name="CoinCollider" type="Area2D" parent="."]
+physics_interpolation_mode = 2
+collision_layer = 512
+collision_mask = 128
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinCollider"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_3wli2")
+
+[connection signal="body_entered" from="CoinCollider" to="." method="_on_coin_collider_body_entered"]
