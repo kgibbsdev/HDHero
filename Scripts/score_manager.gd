@@ -12,10 +12,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	bit_limit_bar.max_value = Global.bit_limit
 	var current_bits = get_tree().get_nodes_in_group("bits").size()
 	score_label.text = str(player_score)
 	bit_limit_bar.value = current_bits
 	bit_limit_bar_label.text = "Bit Limit          " + str(current_bits) + " / " + str(Global.bit_limit)
+
 func add_score(value: float):
 	print("score")
 	player_score += value

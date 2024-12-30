@@ -14,9 +14,11 @@ func _process(delta: float) -> void:
 
 
 func _on_increase_bit_limit_button_pressed() -> void:
-	Global.bit_limit += 100
 	print("_on_increase_bit_limit_button_pressed")
+	Global.bit_limit += 100
+	
 
 
 func _on_increase_power_button_pressed() -> void:
+	print("_on_increase_power_button_pressed")
 	Global.power += 1
