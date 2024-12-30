@@ -9,6 +9,9 @@ class_name Character
 @export var jump_force = -500.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.5
 
+@export var power = 1
+@export var core = 1
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Called when the node enters the scene tree for the first time.

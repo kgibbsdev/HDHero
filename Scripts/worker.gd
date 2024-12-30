@@ -20,7 +20,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	move_speed = run_speed * worker_speed_mult * acceleration
+	move_speed = run_speed * (worker_speed_mult + core) * acceleration
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta

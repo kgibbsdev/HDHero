@@ -28,5 +28,22 @@ text = "Hire Worker"
 layout_mode = 2
 text = "Increase Power"
 
+[node name="WorkerContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CurrentWorkerLabel" type="Label" parent="VBoxContainer/WorkerContainer"]
+layout_mode = 2
+text = "Current Worker:"
+
+[node name="WorkerIncreaseCoreButton" type="Button" parent="VBoxContainer/WorkerContainer"]
+layout_mode = 2
+text = "Increase Core"
+
+[node name="WorkerIncreasePowerButton" type="Button" parent="VBoxContainer/WorkerContainer"]
+layout_mode = 2
+text = "Increase Power"
+
 [connection signal="pressed" from="VBoxContainer/IncreaseBitLimitButton" to="." method="_on_increase_bit_limit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/IncreasePowerButton" to="." method="_on_increase_power_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/WorkerContainer/WorkerIncreaseCoreButton" to="." method="_on_worker_increase_core_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/WorkerContainer/WorkerIncreasePowerButton" to="." method="_on_worker_increase_power_button_pressed"]
