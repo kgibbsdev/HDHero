@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://4gtps6tqv2fp"]
 
-[ext_resource type="Script" path="res://bit_instance_manager.gd" id="1_kxkad"]
+[ext_resource type="Script" path="res://Scripts/bit_instance_manager.gd" id="1_kxkad"]
 
 [node name="BitInstanceManager" type="Node"]
 script = ExtResource("1_kxkad")

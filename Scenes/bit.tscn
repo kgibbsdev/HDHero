@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7ihbysdfmuay"]
 
-[ext_resource type="Texture2D" uid="uid://dlop466eqttcv" path="res://bit-sprite-0.png" id="1_374wd"]
-[ext_resource type="Script" path="res://bit.gd" id="1_l8mx0"]
-[ext_resource type="Texture2D" uid="uid://3qh6hc70nsl2" path="res://bit-sprite-1.png" id="2_7jdu2"]
+[ext_resource type="Texture2D" uid="uid://dlop466eqttcv" path="res://Sprites/bit-sprite-0.png" id="1_374wd"]
+[ext_resource type="Script" path="res://Scripts/bit.gd" id="1_l8mx0"]
+[ext_resource type="Texture2D" uid="uid://3qh6hc70nsl2" path="res://Sprites/bit-sprite-1.png" id="2_7jdu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_re11y"]
 size = Vector2(10, 14)

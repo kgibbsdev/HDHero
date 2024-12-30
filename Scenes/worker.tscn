@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://rxp2msfs42f"]
 
-[ext_resource type="Script" path="res://worker.gd" id="1_sqc3n"]
-[ext_resource type="Texture2D" uid="uid://dx8a2nhiqj2d6" path="res://player.png" id="2_7606q"]
+[ext_resource type="Script" path="res://Scripts/worker.gd" id="1_sqc3n"]
+[ext_resource type="Texture2D" uid="uid://dx8a2nhiqj2d6" path="res://Sprites/player.png" id="2_7606q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_go1x8"]
 radius = 17.0

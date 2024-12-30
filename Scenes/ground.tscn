@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bee6tdc7hskmy"]
 
-[ext_resource type="Texture2D" uid="uid://cy0agw1rlto2" path="res://Ground.png" id="1_u0bn3"]
+[ext_resource type="Texture2D" uid="uid://cy0agw1rlto2" path="res://Sprites/Ground.png" id="1_u0bn3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vmyv2"]
 friction = 100000.0
