@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var bit_scene: PackedScene = load("res://bit.tscn")
-
+@export var number_of_bits = 0
+@export var bit_limit = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -29,7 +30,12 @@ func _on_body_entered(body: Node2D) -> void:
 		spawn_bit()
 		
 func spawn_bit():
-	var bit = bit_scene.instantiate()
-	bit.get_node("AnimatedSprite2D").play()
-	add_child(bit, true)
-	call_deferred("_apply_impulse_to_body", bit)
+	if get_tree().get_nodes_in_group("bits").size() < bit_limit:
+		var bit = bit_scene.instantiate()
+		bit.get_node("AnimatedSprite2D").play()
+		bit.add_to_group("bits")
+		add_child(bit, true)
+		number_of_bits += 1
+		call_deferred("_apply_impulse_to_body", bit)
+	else:
+		print("too many bits!")

@@ -36,9 +36,11 @@ func _physics_process(delta):
 
 func _on_hard_drive_body_entered(body: Node2D) -> void:
 	velocity.y = 0
-
+	velocity.x = 0
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name.to_lower().contains("bit"):
 		print(body.name)
 		body.queue_free()
 		get_parent().score_manager.add_score(1)
+		

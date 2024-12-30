@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkkdlofsafncn"]
+[gd_scene load_steps=9 format=3 uid="uid://bkkdlofsafncn"]
 
 [ext_resource type="PackedScene" uid="uid://dxmbjw3k4uptm" path="res://hard_drive.tscn" id="1_0juwc"]
 [ext_resource type="Script" path="res://score_manager.gd" id="1_b5j75"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6bls"]
 [ext_resource type="PackedScene" uid="uid://kh8ttg4tuqf" path="res://player.tscn" id="1_m7g7t"]
 [ext_resource type="PackedScene" uid="uid://bee6tdc7hskmy" path="res://ground.tscn" id="1_wmbpd"]
+[ext_resource type="Texture2D" uid="uid://c7y1v4w7olri1" path="res://menu-button.png" id="6_1788a"]
+[ext_resource type="Script" path="res://menu_button.gd" id="7_mtyfs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o845l"]
 font_size = 100
@@ -17,12 +19,19 @@ script = ExtResource("1_b5j75")
 
 [node name="ScoreLabel" type="Label" parent="ScoreManager"]
 z_index = -1000
-offset_left = 14.0
-offset_top = -9.0
-offset_right = 298.0
-offset_bottom = 128.0
+offset_left = 26.0
+offset_top = -1.0
+offset_right = 310.0
+offset_bottom = 136.0
 text = "0"
 label_settings = SubResource("LabelSettings_o845l")
+
+[node name="BitLimitBar" type="ProgressBar" parent="ScoreManager"]
+offset_left = 20.0
+offset_top = 138.0
+offset_right = 209.0
+offset_bottom = 165.0
+allow_greater = true
 
 [node name="Player" parent="." instance=ExtResource("1_m7g7t")]
 position = Vector2(346, 304)
@@ -33,4 +42,19 @@ position = Vector2(586, 529)
 [node name="HardDrive" parent="." instance=ExtResource("1_0juwc")]
 position = Vector2(507, 258)
 
+[node name="Menu-button" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1078, 40)
+texture = ExtResource("6_1788a")
+script = ExtResource("7_mtyfs")
+
+[node name="Button" type="Button" parent="Menu-button"]
+offset_left = -65.0
+offset_top = -31.0
+offset_right = 65.0
+offset_bottom = 31.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="bit_collected" from="Player" to="HardDrive" method="_on_player_bit_collected"]
 [connection signal="body_entered" from="HardDrive" to="Player" method="_on_hard_drive_body_entered"]
+[connection signal="pressed" from="Menu-button/Button" to="Menu-button" method="_on_button_pressed"]
