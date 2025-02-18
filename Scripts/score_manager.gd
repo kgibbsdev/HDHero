@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	bit_limit_bar_label.text = "Bit Limit          " + str(current_bits) + " / " + str(Global.bit_limit)
 
 func add_score(value: float):
-	print("score")
+	#print("score")
 	player_score += value
 
 func get_score():

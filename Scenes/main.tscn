@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkkdlofsafncn"]
+[gd_scene load_steps=12 format=3 uid="uid://bkkdlofsafncn"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_x5cfh"]
 [ext_resource type="Script" path="res://Scripts/score_manager.gd" id="2_fcxmc"]
+[ext_resource type="PackedScene" uid="uid://mgf0f1okiv2r" path="res://Scenes/bit_manager.tscn" id="2_sar8q"]
 [ext_resource type="PackedScene" uid="uid://bgqtliuuslnyk" path="res://Scenes/shop_menu.tscn" id="2_u72da"]
 [ext_resource type="PackedScene" uid="uid://kh8ttg4tuqf" path="res://Scenes/player.tscn" id="3_jw5wt"]
 [ext_resource type="PackedScene" uid="uid://bee6tdc7hskmy" path="res://Scenes/ground.tscn" id="4_wiu1k"]
@@ -16,11 +17,20 @@ font_size = 100
 [node name="Main" type="Node2D"]
 script = ExtResource("1_x5cfh")
 
+[node name="BitManager" parent="." instance=ExtResource("2_sar8q")]
+position = Vector2(257, 107)
+
 [node name="ShopMenu" parent="." instance=ExtResource("2_u72da")]
-offset_left = 488.0
-offset_top = 46.0
-offset_right = 488.0
-offset_bottom = 46.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 935.0
+offset_top = 99.0
+offset_right = 935.0
+offset_bottom = 99.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreManager" type="Node" parent="."]
@@ -74,7 +84,9 @@ offset_bottom = 31.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Worker" parent="." instance=ExtResource("8_q4cn4")]
-position = Vector2(112, 368)
+position = Vector2(114, 362)
+mode = 2
 
 [connection signal="body_entered" from="HardDrive" to="Player" method="_on_hard_drive_body_entered"]
+[connection signal="body_entered" from="HardDrive" to="Worker" method="_on_hard_drive_body_entered"]
 [connection signal="pressed" from="Menu-button/Button" to="Menu-button" method="_on_button_pressed"]

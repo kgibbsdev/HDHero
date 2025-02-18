@@ -1,5 +1,6 @@
 extends Character
  
+@export var jump_force = -500.0
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -18,14 +19,16 @@ func _physics_process(delta: float) -> void:
  
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
+		
 	move_and_slide()
+	
 func _on_hard_drive_body_entered(body: Node2D) -> void:
 	velocity.y = 0
 	velocity.x = 0
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name.to_lower().contains("bit"):
-		print(body.name)
+		#print(body.name)
 		body.queue_free()
 		get_parent().score_manager.add_score(1)
 		

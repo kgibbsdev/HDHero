@@ -18,16 +18,21 @@ script = ExtResource("1_sqc3n")
 texture = ExtResource("2_7606q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_go1x8")
 
 [node name="CoinCollider" type="Area2D" parent="."]
 physics_interpolation_mode = 2
+visible = false
 collision_layer = 128
 collision_mask = 128
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoinCollider"]
-position = Vector2(0, 2)
+position = Vector2(0, 15)
 shape = SubResource("CircleShape2D_3wli2")
 
+[node name="JumpTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="CoinCollider" to="." method="_on_coin_collider_body_entered"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
