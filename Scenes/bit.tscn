@@ -33,5 +33,3 @@ sprite_frames = SubResource("SpriteFrames_om4rt")
 frame_progress = 0.0810177
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
