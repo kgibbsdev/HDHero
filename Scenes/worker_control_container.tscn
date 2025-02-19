@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b1ejm7h2w8l3d"]
+
+[node name="WorkerControlContainer" type="VFlowContainer"]
+offset_left = 2.0
+offset_top = 70.0
+offset_right = 140.0
+offset_bottom = 349.0
+
+[node name="WorkerNumberLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Worker #"
+
+[node name="WorkerIncreasePowerButton" type="Button" parent="."]
+layout_mode = 2
+text = "Power Up"
+
+[node name="WorkerIncreaseCoreButton" type="Button" parent="."]
+layout_mode = 2
+text = "Core Up"
+
+[node name="ModelLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Mode:"
+
+[node name="CollectModeCheckbox" type="CheckBox" parent="."]
+layout_mode = 2
+text = "Collect"
+
+[node name="HitModeCheckbox" type="CheckBox" parent="."]
+layout_mode = 2
+text = "Hit"

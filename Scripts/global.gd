@@ -2,4 +2,9 @@ extends Node
 
 var bit_limit = 100
 var power = 1
-var workers: Array[Character] = []
+
+enum worker_mode 
+{
+	collect = 1,
+	jump = 2
+}

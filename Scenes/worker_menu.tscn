@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://c11b3y7frdni"]
+
+[ext_resource type="Script" path="res://Scripts/worker_menu.gd" id="1_mfu3s"]
+
+[node name="WorkerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfu3s")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 58.0
+
+[node name="Button" type="Button" parent="HFlowContainer"]
+layout_mode = 2
+text = "Spawn Worker"
+
+[node name="WorkersLabel" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+text = "Workers"

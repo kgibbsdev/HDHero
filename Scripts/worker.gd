@@ -2,7 +2,7 @@ extends Character
 
 @onready var hard_drive = get_parent().get_node("HardDrive")
 @onready var jump_timer = $JumpTimer
-@export  var mode: worker_mode
+@export  var mode: Global.worker_mode
 @export var move_speed = 0
 @export var worker_speed_mult = 2
 @export var jump_timer_amount = 1
@@ -11,12 +11,6 @@ extends Character
 var bit_target
 var collecting_bit = false
 var can_jump = true
-
-enum worker_mode 
-{
-	collect = 1,
-	jump = 2
-}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,10 +34,10 @@ func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_released("jump") and velocity.y < 0:
 		#velocity.y *= decelerate_on_jump_release
 	
-	if mode == worker_mode.collect:
+	if mode == Global.worker_mode.collect:
 		collect_bits(delta)
 	
-	if mode == worker_mode.jump:
+	if mode == Global.worker_mode.jump:
 		if position.x != hard_drive.position.x:
 			move_below_hard_drive(delta)
 		elif can_jump:
@@ -57,9 +51,12 @@ func _physics_process(delta: float) -> void:
 	if velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
 	move_and_slide()
-	
+
+func set_mode(new_mode: Global.worker_mode):
+	mode = new_mode
+
 func _on_coin_collider_body_entered(body: Node2D) -> void:
-	if body.name.to_lower().contains("bit") and mode == worker_mode.collect:
+	if body.name.to_lower().contains("bit") and mode == Global.worker_mode.collect:
 		bit_target = null
 		body.queue_free()
 		get_parent().score_manager.add_score(1)
@@ -81,8 +78,7 @@ func jump():
 	
 func _on_jump_timer_timeout() -> void:
 	can_jump = true
-
-
+	
 func _on_hard_drive_body_entered(body: Node2D) -> void:
 	velocity.y = 0
 	velocity.x = 0
