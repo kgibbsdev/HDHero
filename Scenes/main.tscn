@@ -40,10 +40,10 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 623.0
-offset_top = -3.0
-offset_right = 623.0
-offset_bottom = -3.0
+offset_left = 247.0
+offset_top = 21.0
+offset_right = 247.0
+offset_bottom = 21.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -79,6 +79,7 @@ text = "Bit Limit"
 position = Vector2(346, 304)
 
 [node name="Ground" parent="." instance=ExtResource("4_wiu1k")]
+show_behind_parent = true
 position = Vector2(586, 529)
 
 [node name="HardDrive" parent="." instance=ExtResource("5_2bc1q")]

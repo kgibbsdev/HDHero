@@ -19,7 +19,8 @@ func add_worker_ui(worker):
 	worker_controls.append(worker_control)
 	add_child(worker_control, true)
 
-	worker_control.set_number_label("Worker #" + str(len(workers)))
+#	Workers array is 0-based
+	worker_control.set_worker_number(len(workers) - 1)
 	var spacing: Vector2 = Vector2((len(worker_controls) - 1) * spacing_base_x, position.y + spacing_base_y)
 	worker_control.set_position(spacing)
 	

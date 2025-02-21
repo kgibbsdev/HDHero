@@ -9,7 +9,6 @@ var default_spawn_point = Vector2(114, 362)
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -26,3 +25,6 @@ func spawn_worker(provided_spawn_position: Vector2 = default_spawn_point):
 	
 func get_worker_count():
 	return len(workers)
+	
+func change_worker_mode(worker_number, mode):
+	workers[worker_number].set_mode(mode)

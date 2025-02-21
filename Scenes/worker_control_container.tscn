@@ -6,7 +6,7 @@
 offset_left = 2.0
 offset_top = 70.0
 offset_right = 140.0
-offset_bottom = 349.0
+offset_bottom = 267.0
 script = ExtResource("1_h5pro")
 
 [node name="WorkerNumberLabel" type="Label" parent="."]
@@ -32,3 +32,6 @@ text = "Collect"
 [node name="HitModeCheckbox" type="CheckBox" parent="."]
 layout_mode = 2
 text = "Hit"
+
+[connection signal="toggled" from="CollectModeCheckbox" to="." method="_on_collect_mode_checkbox_toggled"]
+[connection signal="toggled" from="HitModeCheckbox" to="." method="_on_hit_mode_checkbox_toggled"]
