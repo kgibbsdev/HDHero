@@ -77,10 +77,15 @@ text = "Bit Limit"
 
 [node name="Player" parent="." instance=ExtResource("3_jw5wt")]
 position = Vector2(346, 304)
+collision_mask = 524289
 
 [node name="Ground" parent="." instance=ExtResource("4_wiu1k")]
 show_behind_parent = true
+light_mask = 524288
+visibility_layer = 524288
 position = Vector2(586, 529)
+collision_layer = 524288
+collision_mask = 524288
 
 [node name="HardDrive" parent="." instance=ExtResource("5_2bc1q")]
 position = Vector2(507, 258)

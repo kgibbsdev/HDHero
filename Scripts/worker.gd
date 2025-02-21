@@ -21,8 +21,10 @@ func _ready() -> void:
 	run_speed = 300
 	#mode = worker_mode.collect
 	#set_collision_mask_value(8, true)
+	
 	set_collision_mask_value(2, true)
-	set_collision_mask_value(10, true)
+	set_collision_mask_value(11, true)
+	set_collision_mask_value(20, true)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	

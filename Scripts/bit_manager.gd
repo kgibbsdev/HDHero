@@ -33,4 +33,4 @@ func check_if_deletable(bit):
 	if bit.get_position().y < 0:
 		pass
 	else:
-		bit.queue_free(bit)
+		bit.queue_free()

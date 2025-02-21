@@ -47,9 +47,10 @@ jump={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Harddrive"
+2d_physics/layer_2="Hard Drive"
 2d_physics/layer_8="Bits"
 2d_physics/layer_10="Workers"
+2d_physics/layer_20="Ground"
 
 [rendering]
 

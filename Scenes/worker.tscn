@@ -11,7 +11,7 @@ radius = 23.0217
 
 [node name="Worker" type="CharacterBody2D" groups=["Workers"]]
 collision_layer = 512
-collision_mask = 1024
+collision_mask = 524290
 script = ExtResource("1_sqc3n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
