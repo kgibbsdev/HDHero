@@ -20,10 +20,6 @@ offset_bottom = 40.0
 layout_mode = 2
 text = "Increase Bit Limit"
 
-[node name="HireWorkerButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Hire Worker"
-
 [node name="IncreasePowerButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Increase Power"

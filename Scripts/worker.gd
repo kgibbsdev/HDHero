@@ -1,8 +1,9 @@
-extends Character
+class_name Worker extends Character
 
-@onready var hard_drive = get_parent().get_node("HardDrive")
-@onready var jump_timer = $JumpTimer
-@export  var mode: Global.worker_mode
+
+var jump_timer: Timer
+
+@export var mode: Global.worker_mode
 @export var move_speed = 0
 @export var worker_speed_mult = 2
 @export var jump_timer_amount = 1
@@ -11,12 +12,14 @@ extends Character
 var bit_target
 var collecting_bit = false
 var can_jump = true
-
+var hard_drive
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hard_drive = get_parent().get_parent().get_node("HardDrive")
+	jump_timer = get_node("JumpTimer")
 	run_speed = 300
 	#mode = worker_mode.collect
-	jump_timer.wait_time = jump_timer_amount
 	#set_collision_mask_value(8, true)
 	set_collision_mask_value(2, true)
 	set_collision_mask_value(10, true)
@@ -59,7 +62,7 @@ func _on_coin_collider_body_entered(body: Node2D) -> void:
 	if body.name.to_lower().contains("bit") and mode == Global.worker_mode.collect:
 		bit_target = null
 		body.queue_free()
-		get_parent().score_manager.add_score(1)
+		get_parent().get_parent().score_manager.add_score(1)
 
 func collect_bits(delta_time) -> void:
 	if bit_target != null:

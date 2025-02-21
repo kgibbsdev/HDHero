@@ -1,21 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkkdlofsafncn"]
+[gd_scene load_steps=13 format=3 uid="uid://bkkdlofsafncn"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_x5cfh"]
+[ext_resource type="PackedScene" uid="uid://bfagidb2yk8an" path="res://Scenes/worker_manager.tscn" id="2_bpb5c"]
 [ext_resource type="Script" path="res://Scripts/score_manager.gd" id="2_fcxmc"]
 [ext_resource type="PackedScene" uid="uid://mgf0f1okiv2r" path="res://Scenes/bit_manager.tscn" id="2_sar8q"]
 [ext_resource type="PackedScene" uid="uid://bgqtliuuslnyk" path="res://Scenes/shop_menu.tscn" id="2_u72da"]
 [ext_resource type="PackedScene" uid="uid://kh8ttg4tuqf" path="res://Scenes/player.tscn" id="3_jw5wt"]
 [ext_resource type="PackedScene" uid="uid://bee6tdc7hskmy" path="res://Scenes/ground.tscn" id="4_wiu1k"]
 [ext_resource type="PackedScene" uid="uid://dxmbjw3k4uptm" path="res://Scenes/hard_drive.tscn" id="5_2bc1q"]
+[ext_resource type="PackedScene" uid="uid://c11b3y7frdni" path="res://Scenes/worker_menu.tscn" id="5_olwef"]
 [ext_resource type="Texture2D" uid="uid://c7y1v4w7olri1" path="res://Sprites/menu-button.png" id="6_p855l"]
 [ext_resource type="Script" path="res://Scripts/menu_button.gd" id="7_cawie"]
-[ext_resource type="PackedScene" uid="uid://rxp2msfs42f" path="res://Scenes/worker.tscn" id="8_q4cn4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o845l"]
 font_size = 100
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_x5cfh")
+
+[node name="WorkerManager" parent="." instance=ExtResource("2_bpb5c")]
 
 [node name="BitManager" parent="." instance=ExtResource("2_sar8q")]
 position = Vector2(257, 107)
@@ -32,6 +35,17 @@ grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="WorkerMenu" parent="." instance=ExtResource("5_olwef")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 623.0
+offset_top = -3.0
+offset_right = 623.0
+offset_bottom = -3.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("2_fcxmc")
@@ -83,10 +97,5 @@ offset_right = 65.0
 offset_bottom = 31.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Worker" parent="." instance=ExtResource("8_q4cn4")]
-position = Vector2(114, 362)
-mode = 2
-
 [connection signal="body_entered" from="HardDrive" to="Player" method="_on_hard_drive_body_entered"]
-[connection signal="body_entered" from="HardDrive" to="Worker" method="_on_hard_drive_body_entered"]
 [connection signal="pressed" from="Menu-button/Button" to="Menu-button" method="_on_button_pressed"]

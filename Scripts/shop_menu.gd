@@ -1,8 +1,6 @@
 extends Control
 
 @onready var increase_bit_limit_button = $VBoxContainer/IncreaseBitLimitButton
-@onready var hire_worker_button = $VBoxContainer/HireWorkerButton
-
 @onready var current_worker_label = $VBoxContainer/WorkerContainer/CurrentWorkerLabel
 @onready var worker_increase_core_button = $VBoxContainer/WorkerContainer/WorkerIncreaseCoreButton
 @onready var worker_increase_power_button = $VBoxContainer/WorkerContainer/WorkerIncreasePowerButton
@@ -11,17 +9,6 @@ var workers = []
 
 @onready var collect_checkbox = $VBoxContainer/WorkerContainer/CollectModeCheckbox
 @onready var hit_checkbox = $VBoxContainer/WorkerContainer/HitModeCheckbox
-
-func _ready():
-	workers = get_tree().get_nodes_in_group("Workers")
-	match workers[0].mode:
-		Global.worker_mode.jump:
-			print("jamp")
-		_:
-			print("no mode set on worker!!!")
-
-func _process(delta: float):
-	pass
 
 func _on_increase_bit_limit_button_pressed() -> void:
 	print("_on_increase_bit_limit_button_pressed")
