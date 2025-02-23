@@ -87,3 +87,6 @@ func _on_jump_timer_timeout() -> void:
 func _on_hard_drive_body_entered(body: Node2D) -> void:
 	velocity.y = 0
 	velocity.x = 0
+
+func get_mode():
+	return mode

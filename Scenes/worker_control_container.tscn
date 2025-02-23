@@ -25,13 +25,13 @@ text = "Core Up"
 layout_mode = 2
 text = "Mode:"
 
-[node name="CollectModeCheckbox" type="CheckBox" parent="."]
+[node name="CollectModeCheckbutton" type="CheckButton" parent="."]
 layout_mode = 2
 text = "Collect"
 
-[node name="HitModeCheckbox" type="CheckBox" parent="."]
+[node name="HitModeCheckbutton" type="CheckButton" parent="."]
 layout_mode = 2
 text = "Hit"
 
-[connection signal="toggled" from="CollectModeCheckbox" to="." method="_on_collect_mode_checkbox_toggled"]
-[connection signal="toggled" from="HitModeCheckbox" to="." method="_on_hit_mode_checkbox_toggled"]
+[connection signal="toggled" from="CollectModeCheckbutton" to="." method="_on_collect_mode_checkbutton_toggled"]
+[connection signal="toggled" from="HitModeCheckbutton" to="." method="_on_hit_mode_checkbutton_toggled"]

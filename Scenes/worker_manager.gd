@@ -28,3 +28,6 @@ func get_worker_count():
 	
 func change_worker_mode(worker_number, mode):
 	workers[worker_number].set_mode(mode)
+
+func get_worker_mode(worker_number):
+	return workers[worker_number].get_mode()
