@@ -1,7 +1,7 @@
-extends Node2D
+class_name BitManager extends Node2D
 
 @onready var bit_scene: PackedScene = load("res://Scenes/bit.tscn")
-@export var bit_limit = Global.bit_limit
+@export var bit_limit = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -34,3 +34,9 @@ func check_if_deletable(bit):
 		pass
 	else:
 		bit.queue_free()
+
+func increase_bit_limit(amount: int):
+	bit_limit += amount
+
+func get_bit_limit():
+	return bit_limit

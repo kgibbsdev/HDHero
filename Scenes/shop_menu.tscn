@@ -24,36 +24,5 @@ text = "Increase Bit Limit"
 layout_mode = 2
 text = "Increase Power"
 
-[node name="WorkerContainer" type="VBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="CurrentWorkerLabel" type="Label" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Workers"
-
-[node name="WorkerIncreaseCoreButton" type="Button" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Increase Core"
-
-[node name="WorkerIncreasePowerButton" type="Button" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Increase Power"
-
-[node name="Label" type="Label" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Mode:"
-
-[node name="CollectModeCheckbox" type="CheckBox" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Collect"
-
-[node name="HitModeCheckbox" type="CheckBox" parent="VBoxContainer/WorkerContainer"]
-layout_mode = 2
-text = "Hit"
-
 [connection signal="pressed" from="VBoxContainer/IncreaseBitLimitButton" to="." method="_on_increase_bit_limit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/IncreasePowerButton" to="." method="_on_increase_power_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorkerContainer/WorkerIncreaseCoreButton" to="." method="_on_worker_increase_core_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorkerContainer/WorkerIncreasePowerButton" to="." method="_on_worker_increase_power_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorkerContainer/CollectModeCheckbox" to="." method="_on_collect_mode_checkbox_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorkerContainer/HitModeCheckbox" to="." method="_on_hit_mode_checkbox_pressed"]
