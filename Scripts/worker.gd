@@ -65,12 +65,15 @@ func _on_coin_collider_body_entered(body: Node2D) -> void:
 		bit_target = null
 		body.queue_free()
 		get_parent().get_parent().score_manager.add_score(1)
-
+	
 func collect_bits(delta_time) -> void:
+	var num_bits = len(get_tree().get_nodes_in_group("bits"))
 	if bit_target != null:
 		position = position.move_toward(Vector2(bit_target.get_global_position().x, position.y), delta_time * move_speed)
 	else:
-		bit_target = get_tree().get_first_node_in_group("bits")
+		if num_bits > 0:
+			var bits = get_tree().get_nodes_in_group("bits")
+			bit_target = bits.pick_random()
 
 func move_below_hard_drive(delta_time):
 	#print(move_speed)

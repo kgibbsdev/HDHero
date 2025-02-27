@@ -19,8 +19,7 @@ func spawn_worker(provided_spawn_position: Vector2 = default_spawn_point):
 	worker.position = default_spawn_point
 	worker.mode = Global.worker_mode.collect
 	workers.append(worker)
-	
-	add_child(worker)
+	add_child(worker, true)
 	worker_menu.add_worker_ui(worker)
 	
 func get_worker_count():
