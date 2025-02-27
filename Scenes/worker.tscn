@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rxp2msfs42f"]
+[gd_scene load_steps=6 format=3 uid="uid://rxp2msfs42f"]
 
 [ext_resource type="Script" path="res://Scripts/worker.gd" id="1_sqc3n"]
+[ext_resource type="PackedScene" uid="uid://b1jhfl4uw5spa" path="res://Scenes/StatsManager.tscn" id="2_6yhkk"]
 [ext_resource type="Texture2D" uid="uid://dx8a2nhiqj2d6" path="res://Sprites/player.png" id="2_7606q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_go1x8"]
@@ -13,6 +14,8 @@ radius = 23.0217
 collision_layer = 512
 collision_mask = 524290
 script = ExtResource("1_sqc3n")
+
+[node name="StatsManager" parent="." instance=ExtResource("2_6yhkk")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7606q")

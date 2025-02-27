@@ -1,24 +1,26 @@
-extends Character
- 
-@export var jump_force = -500.0
+extends CharacterBody2D
+
+@onready var stats: StatsManager = get_node("StatsManager")
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	var speed = run_speed
+	var speed = stats.run_speed
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
+		velocity.x = move_toward(velocity.x, direction * speed, speed * stats.acceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0, walk_speed * deceleration)
+		velocity.x = move_toward(velocity.x, 0, stats.walk_speed * stats.deceleration)
 
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_wall()):
-		velocity.y = jump_force
+		velocity.y = stats.jump_force
  
 	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y *= decelerate_on_jump_release
+		velocity.y *= stats.decelerate_on_jump_release
 		
 	move_and_slide()
 	

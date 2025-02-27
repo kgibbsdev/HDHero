@@ -1,5 +1,6 @@
-class_name Worker extends Character
+class_name Worker extends CharacterBody2D
 
+@onready var stats: StatsManager = get_node("StatsManager")
 
 var jump_timer: Timer
 
@@ -18,7 +19,7 @@ var hard_drive
 func _ready() -> void:
 	hard_drive = get_parent().get_parent().get_node("HardDrive")
 	jump_timer = get_node("JumpTimer")
-	run_speed = 300
+	stats.run_speed = 300
 	#mode = worker_mode.collect
 	#set_collision_mask_value(8, true)
 	
@@ -28,10 +29,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	
-	move_speed = run_speed * (worker_speed_mult + core) * acceleration
+	move_speed = stats.run_speed * (worker_speed_mult + stats.core) * stats.acceleration
 	
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += stats.gravity * delta
 	
 	#if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_wall()):
 		#velocity.y = jump_force
@@ -54,7 +55,7 @@ func _physics_process(delta: float) -> void:
 			#print("doing nothing")
 			
 	if velocity.y < 0:
-		velocity.y *= decelerate_on_jump_release
+		velocity.y *= stats.decelerate_on_jump_release
 	move_and_slide()
 
 func set_mode(new_mode: Global.worker_mode):
