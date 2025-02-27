@@ -2,11 +2,9 @@ extends CharacterBody2D
 
 @onready var stats: StatsManager = get_node("StatsManager")
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += stats.gravity * delta
 		
 	var speed = stats.run_speed
 	# Get the input direction and handle the movement/deceleration.
