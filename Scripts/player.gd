@@ -28,7 +28,8 @@ func _on_hard_drive_body_entered(body: Node2D) -> void:
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name.to_lower().contains("bit"):
-		#print(body.name)
+		var value = body.get_meta("value")
+		print(value)
 		body.queue_free()
-		get_parent().score_manager.add_score(1)
+		get_parent().score_manager.add_score(value)
 		

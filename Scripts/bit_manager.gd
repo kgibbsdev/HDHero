@@ -17,6 +17,8 @@ func spawn_bit(spawn_position = Vector2(0, 0)):
 		bit.add_to_group("bits")
 		bit.position = to_local(spawn_position)	# I don't know why this is right but it works
 		bit.get_node("VisibleOnScreenNotifier2D").connect("screen_exited", check_if_deletable.bind(bit))
+		set_bit_color(bit)
+		set_bit_value(bit)
 		add_child(bit, true)
 		call_deferred("_apply_impulse_to_body", bit)
 	else:
@@ -40,3 +42,9 @@ func increase_bit_limit(amount: int):
 
 func get_bit_limit():
 	return bit_limit
+
+func set_bit_color(bit_instance):
+	bit_instance.get_node("AnimatedSprite2D").material.set_shader_parameter("overlay_color", Color(0, 1, 0, 1))
+
+func set_bit_value(bit_instance):
+	bit_instance.set_meta("value", 2)

@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ihbysdfmuay"]
+[gd_scene load_steps=7 format=3 uid="uid://c7ihbysdfmuay"]
 
 [ext_resource type="Texture2D" uid="uid://dlop466eqttcv" path="res://Sprites/bit-sprite-0.png" id="1_374wd"]
+[ext_resource type="Shader" path="res://Scenes/bit.gdshader" id="1_j715h"]
 [ext_resource type="Texture2D" uid="uid://3qh6hc70nsl2" path="res://Sprites/bit-sprite-1.png" id="2_7jdu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_re11y"]
 size = Vector2(10, 14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltnxx"]
+shader = ExtResource("1_j715h")
+shader_parameter/overlay_color = null
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_om4rt"]
 animations = [{
@@ -30,6 +35,7 @@ shape = SubResource("RectangleShape2D_re11y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_ltnxx")
 sprite_frames = SubResource("SpriteFrames_om4rt")
 frame_progress = 0.0810177
 

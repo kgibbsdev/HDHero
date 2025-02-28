@@ -64,8 +64,9 @@ func set_mode(new_mode: Global.worker_mode):
 func _on_coin_collider_body_entered(body: Node2D) -> void:
 	if body.name.to_lower().contains("bit") and mode == Global.worker_mode.collect:
 		bit_target = null
+		var value = body.get_meta("value")
 		body.queue_free()
-		get_parent().get_parent().score_manager.add_score(1)
+		get_parent().get_parent().score_manager.add_score(value)
 	
 func collect_bits(delta_time) -> void:
 	var num_bits = len(get_tree().get_nodes_in_group("bits"))
