@@ -2,6 +2,8 @@ class_name BitManager extends Node2D
 
 @onready var bit_scene: PackedScene = load("res://Scenes/bit.tscn")
 @export var bit_limit = 100
+@export var bit_value_min = 1
+@export var bit_value_max = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -17,8 +19,8 @@ func spawn_bit(spawn_position = Vector2(0, 0)):
 		bit.add_to_group("bits")
 		bit.position = to_local(spawn_position)	# I don't know why this is right but it works
 		bit.get_node("VisibleOnScreenNotifier2D").connect("screen_exited", check_if_deletable.bind(bit))
-		set_bit_color(bit)
 		set_bit_value(bit)
+		set_bit_color(bit)
 		add_child(bit, true)
 		call_deferred("_apply_impulse_to_body", bit)
 	else:
@@ -44,7 +46,16 @@ func get_bit_limit():
 	return bit_limit
 
 func set_bit_color(bit_instance):
-	bit_instance.get_node("AnimatedSprite2D").material.set_shader_parameter("overlay_color", Color(0, 1, 0, 1))
-
+	var val = bit_instance.get_meta("value")
+	var sprite = bit_instance.get_node("AnimatedSprite2D")
+	sprite.material = sprite.material.duplicate()
+	print(val)
+	match val:
+		1: sprite.material.set_shader_parameter("overlay_color", Color(1, 1, 1, 1))
+		2: sprite.material.set_shader_parameter("overlay_color", Color(0, 1, 0, 1))
+		3: sprite.material.set_shader_parameter("overlay_color", Color(0, 0, 1, 1))
+		_: sprite.material.set_shader_parameter("overlay_color", Color(0, 0, 0, 1))
+		
 func set_bit_value(bit_instance):
-	bit_instance.set_meta("value", 2)
+	var val = randi_range(bit_value_min, bit_value_max)
+	bit_instance.set_meta("value", val)
