@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfagidb2yk8an"]
 
-[ext_resource type="Script" path="res://Scenes/worker_manager.gd" id="1_0k575"]
+[ext_resource type="Script" uid="uid://qdxsx82i1ncb" path="res://Scenes/worker_manager.gd" id="1_0k575"]
 
 [node name="WorkerManager" type="Node2D"]
 script = ExtResource("1_0k575")

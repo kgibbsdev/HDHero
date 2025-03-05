@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1ejm7h2w8l3d"]
 
-[ext_resource type="Script" path="res://Scenes/worker_control_container.gd" id="1_h5pro"]
+[ext_resource type="Script" uid="uid://2eomny06f8k8" path="res://Scenes/worker_control_container.gd" id="1_h5pro"]
 
 [node name="WorkerControlContainer" type="VFlowContainer"]
 offset_left = 2.0

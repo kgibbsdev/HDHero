@@ -53,8 +53,8 @@ func set_bit_color(bit_instance):
 	match val:
 		1: sprite.material.set_shader_parameter("overlay_color", Color(1, 1, 1, 1))
 		2: sprite.material.set_shader_parameter("overlay_color", Color(0, 1, 0, 1))
-		3: sprite.material.set_shader_parameter("overlay_color", Color(0, 0, 1, 1))
-		_: sprite.material.set_shader_parameter("overlay_color", Color(0, 0, 0, 1))
+		3: sprite.material.set_shader_parameter("overlay_color", Color(1, 0, 1, 1))
+		_: print("default!!")
 		
 func set_bit_value(bit_instance):
 	var val = randi_range(bit_value_min, bit_value_max)

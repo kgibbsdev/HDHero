@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://bkkdlofsafncn"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_x5cfh"]
+[ext_resource type="Script" uid="uid://dc0xoo5lc3xfw" path="res://Scripts/main.gd" id="1_x5cfh"]
 [ext_resource type="PackedScene" uid="uid://bfagidb2yk8an" path="res://Scenes/worker_manager.tscn" id="2_bpb5c"]
-[ext_resource type="Script" path="res://Scripts/score_manager.gd" id="2_fcxmc"]
+[ext_resource type="Script" uid="uid://cpdbfm68sm6ag" path="res://Scripts/score_manager.gd" id="2_fcxmc"]
 [ext_resource type="PackedScene" uid="uid://mgf0f1okiv2r" path="res://Scenes/bit_manager.tscn" id="2_sar8q"]
 [ext_resource type="PackedScene" uid="uid://bgqtliuuslnyk" path="res://Scenes/shop_menu.tscn" id="2_u72da"]
 [ext_resource type="PackedScene" uid="uid://kh8ttg4tuqf" path="res://Scenes/player.tscn" id="3_jw5wt"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmbjw3k4uptm" path="res://Scenes/hard_drive.tscn" id="5_2bc1q"]
 [ext_resource type="PackedScene" uid="uid://c11b3y7frdni" path="res://Scenes/worker_menu.tscn" id="5_olwef"]
 [ext_resource type="Texture2D" uid="uid://c7y1v4w7olri1" path="res://Sprites/menu-button.png" id="6_p855l"]
-[ext_resource type="Script" path="res://Scripts/menu_button.gd" id="7_cawie"]
+[ext_resource type="Script" uid="uid://vwi4qgm5dxnr" path="res://Scripts/menu_button.gd" id="7_cawie"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o845l"]
 font_size = 100
