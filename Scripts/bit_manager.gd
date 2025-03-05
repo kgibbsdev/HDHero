@@ -11,13 +11,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func spawn_bit(spawn_position = Vector2(0, 0)):
+func spawn_bit(spawn_position):
 	if get_tree().get_nodes_in_group("bits").size() < bit_limit:
 		var bit = bit_scene.instantiate()
 		bit.get_node("AnimatedSprite2D").play()
 		bit.add_to_group("bits")
-		bit.position = to_local(spawn_position)	# I don't know why this is right but it works
+		bit.position = to_global(spawn_position)
 		bit.get_node("VisibleOnScreenNotifier2D").connect("screen_exited", check_if_deletable.bind(bit))
 		set_bit_value(bit)
 		set_bit_color(bit)
